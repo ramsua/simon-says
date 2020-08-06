@@ -1,6 +1,6 @@
 # Simon Says game
 
-Requeriments | **english**
+Requeriments | **english** - [See in browser](https://ramsua.github.io/simon-says/)
 
 - The game consists of the program making a sequence of colors and the user having to repeat it.
 - The color sequence is progressive, being the first of 1, the second of 2, the third of 3 and so on.
@@ -12,7 +12,7 @@ Requeriments | **english**
 - The use of frameworks or libraries is not allowed.
 - Template engines and / or preprocessors can be used.
 
-Requerimientos | **español**
+Requerimientos | **español** - [Ver en el navegador](https://ramsua.github.io/simon-says/)
 
 - El juego consiste en que el programa haga una secuencia de colores y el usuario tenga que repetirla.
 - La secuencia de colores es progresiva, siendo la primera de 1, la segunda de 2, la tercera de 3 y así sucesivamente.

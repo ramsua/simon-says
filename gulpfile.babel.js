@@ -97,7 +97,7 @@ gulp.task('scss-dev', () => {
         .pipe(scss({
             outputStyle: "expanded"
         }))
-        .pipe(postcss(cssPlugins))
+        // .pipe(postcss(cssPlugins))
         .pipe(gulp.dest('./public/css'))
         .pipe(stream({ match: "**/*.css" }))
 })

@@ -1,0 +1,28 @@
+// Colors
+$main-color:  #8000ff;
+$light-color: #f2f2f2;
+$dark-color:  #191919;
+
+// Game colors
+$colors: (
+    'green':  #08bf00,
+    'red':    #df0000,
+    'blue':   #003edf,
+    'yellow': #ffd000
+);
+
+
+// Measurements
+:root{
+    --unit-size: 285px;
+    --unit-gap: 7px;
+
+    @media screen and (min-width: 450px){
+        --unit-size: 385px;
+        --unit-gap: 11px;
+    }
+
+}
+
+$unit-gap: var(--unit-gap);
+$unit-size: var(--unit-size);

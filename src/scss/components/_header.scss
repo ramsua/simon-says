@@ -1,0 +1,15 @@
+.main-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: calc(var(--unit-gap) * 4);
+
+    text-align: center;
+}
+.main-title{
+    margin: 0;
+    
+    line-height: calc(var(--unit-gap) * 4);
+}

@@ -4,6 +4,19 @@
     box-sizing: border-box;
 }
 body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+
     margin: 0;
+
+    color: $light-color;
     font-family: sans-serif;
+    background-color: $dark-color;
+}
+button{
+    border: none;
+    outline: none;
 }

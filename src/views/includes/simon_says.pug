@@ -1,0 +1,4 @@
+section#game.game
+    button#trigger.game__trigger Go!
+    each color in colors
+        button(class= `game__color game__color--${color.color}-off` id=`${color.color}`)

@@ -13,9 +13,16 @@ html(lang="en" prefix='og:http://ogp.me/ns/website#')
 
     body.body
         header.main-header
-            h1.main-title= pageTitle
+            block header
             
-        main
+        main.main-content
             block main
-    
+            
+        aside#aside.aside.aside--active
+            ul.scores
+                li
+                    button.scores__remove-component(data-removecomponent='remove-component') X
+                li.scores__score Username - score: 5
+                li.scores__score Machine - score: 2
+               
     script(type='module' src='./js/scripts.min.js')

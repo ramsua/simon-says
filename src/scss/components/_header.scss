@@ -3,10 +3,16 @@
     top: 0;
     left: 0;
 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+
     width: 100%;
     height: calc(var(--unit-gap) * 4);
 
-    text-align: center;
+    background-color: darken($dark-color, 2);
+
+    z-index: $z-index-fixed;
 }
 .main-title{
     margin: 0;

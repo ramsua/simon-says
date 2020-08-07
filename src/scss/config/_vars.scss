@@ -23,6 +23,11 @@ $colors: (
     }
 
 }
-
 $unit-gap: var(--unit-gap);
 $unit-size: var(--unit-size);
+
+// Z-index
+$z-index-fixed: 1000;
+
+// Transition
+$transition: .15s;

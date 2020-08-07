@@ -1,0 +1,22 @@
+.scores{
+    position: relative;
+    margin-bottom: .5em;
+    background-color: $dark-color;
+    &__remove-component{
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        width: 40px;
+        height: 100%;
+
+        font-size: 1.25em;
+        cursor: pointer;
+    }
+    &__score{
+        padding: .35em;
+    }
+    &:last-child{
+        margin-bottom: 0;
+    }
+}

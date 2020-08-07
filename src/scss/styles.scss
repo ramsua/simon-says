@@ -1,5 +1,7 @@
+@import "./tools/mixins";
 @import "./config/vars";
-@import "./config/mixins";
 @import "./config/reset";
 @import "./components/header";
 @import "./components/game";
+@import "./components/aside";
+@import "./components/scores";

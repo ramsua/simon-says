@@ -134,7 +134,6 @@ gulp.task("scripts-docs", () => {
             transform: [babelify]
         })
             .bundle()
-            .pipe(plumber())
             .pipe(source('scripts.min.js'))
             .pipe(gulp.dest("./docs/js"))
     )

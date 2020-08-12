@@ -1,0 +1,11 @@
+.main-nav{
+    max-width: 100px;
+}
+.menu{
+    display: flex;
+
+    &__item{
+        flex: 1 1 auto;
+        margin: .25em;
+    }
+}

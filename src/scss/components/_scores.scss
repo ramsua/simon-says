@@ -1,7 +1,10 @@
 .scores{
     position: relative;
+
     margin-bottom: .5em;
-    background-color: $dark-color;
+
+    background-color: lighten($dark-color, 4);
+
     &__remove-component{
         position: absolute;
         top: 0;
@@ -13,9 +16,11 @@
         font-size: 1.25em;
         cursor: pointer;
     }
+
     &__score{
         padding: .35em;
     }
+    
     &:last-child{
         margin-bottom: 0;
     }

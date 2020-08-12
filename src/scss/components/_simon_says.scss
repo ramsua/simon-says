@@ -1,4 +1,4 @@
-.game {
+.simon-says {
     position: relative;
 
     display: grid;
@@ -34,7 +34,7 @@
         cursor: pointer;
 
         &:hover{
-            background-color: darken($main-color, 5);
+            background-color: darken($main-color, 20);
         }
     }
 
@@ -47,7 +47,7 @@
             &--#{$key}-off {
                 background-color: $color;
                 &:hover{
-                    background-color: lighten($color, 20);
+                    background-color: lighten($color, 40);
                 }
             }
         }
@@ -55,7 +55,7 @@
         // Colors ON
         @each $key, $color in $colors {
             &--#{$key}-on {
-                background-color: lighten($color, 20);
+                background-color: lighten($color, 40);
                 &:hover{
                     background-color: darken($color, 5);
                 }

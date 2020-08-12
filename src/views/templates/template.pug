@@ -12,17 +12,10 @@ html(lang="en" prefix='og:http://ogp.me/ns/website#')
         block SEO
 
     body.body
-        header.main-header
-            block header
+        block header
             
-        main.main-content
-            block main
+        block main
             
-        aside#aside.aside.aside--active
-            ul.scores
-                li
-                    button.scores__remove-component(data-removecomponent='remove-component') X
-                li.scores__score Username - score: 5
-                li.scores__score Machine - score: 2
+        block aside
                
-    script(type='module' src='./js/scripts.min.js')
+    script(src='./js/scripts.min.js')

@@ -16,12 +16,6 @@
 		"url": "https://github.com/ramsua/simon-says/issues"
 	},
 	"homepage": "https://github.com/ramsua/simon-says#readme",
-	"browserslist": [
-		"defaults",
-		"not IE 11",
-		"not IE_Mob 11",
-		"maintained node versions"
-	],
 	"devDependencies": {
 		"@babel/core": "^7.11.0",
 		"@babel/preset-env": "^7.11.0",
@@ -34,7 +28,6 @@
 		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",
 		"gulp-cache-bust": "^1.4.1",
-		"gulp-htmlmin": "^5.0.1",
 		"gulp-imagemin": "^7.1.0",
 		"gulp-plumber": "^1.2.1",
 		"gulp-postcss": "^8.0.0",

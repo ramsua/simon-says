@@ -1,7 +1,16 @@
+// TOOLS
 @import "./tools/mixins";
+
+// CONFIG
 @import "./config/vars";
 @import "./config/reset";
-@import "./components/header";
-@import "./components/game";
-@import "./components/aside";
+
+// LAYOUT
+@import "./layout/body";
+@import "./layout/header";
+@import "./layout/main_content";
+@import "./layout/aside";
+
+// COMPONENTS
 @import "./components/scores";
+@import "./components/simon_says";

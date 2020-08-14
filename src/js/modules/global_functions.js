@@ -4,17 +4,8 @@
  * @param {string} toggleClass class
  */
 const toggleClass = (target, toggleClass) => {
-
     const t = document.getElementById(target);
-
-    if (t.classList.contains(toggleClass)) {
-
-        t.classList.remove(toggleClass)
-
-    } else {
-
-        t.classList.add(toggleClass)
-    }
+    t.classList.toggle(toggleClass)
 }
 
 /**
@@ -25,13 +16,9 @@ const toggleClass = (target, toggleClass) => {
  * @param {string} newClass - Clase nueva
  */
 const replaceClass = (element, oldClass, newClass) => {
-
     const elem = document.getElementById(element)
-
     if (elem && elem.classList.contains(oldClass)) {
-
         elem.classList.replace(oldClass, newClass)
-
     }
 }
 
@@ -40,16 +27,15 @@ const replaceClass = (element, oldClass, newClass) => {
  *
  * @param {string} removeTo - ID tal cual se escribió en el html
  */
-const removeChild = (removeTo) => {
-
+const removeChilds = (removeTo) => {
     const elem = document.getElementById(removeTo);
-
     if (elem) {
         elem.textContent = ''
     }
 }
+
 export {
     toggleClass,
     replaceClass,
-    removeChild
+    removeChilds
 }

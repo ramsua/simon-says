@@ -5,9 +5,7 @@ const seSt = sessionStorage
  * @param {string} userId - Usuario actual en seesionStorage
  */
 const setCurrentUser = (userId) => {
-
     seSt.setItem('currentUser', JSON.stringify(userId))
-
 }
 
 // Retorna el item de sessionStorage
@@ -18,9 +16,14 @@ const getCurrentUser = () => {
 
 // Si existe algo en sessionStorage retorna true, sino false
 const currentUserLoggedIn = () => {
-
     if (seSt.getItem('currentUser') === null) {
         return false
     }
     return true
+}
+
+export {
+    setCurrentUser,
+    getCurrentUser,
+    currentUserLoggedIn
 }

@@ -1,4 +1,22 @@
 .user-form{
-    position: fixed;
-    top: 50%;
+    padding: calc(var(--unit-gap) * 2);
+    background-color: darken($dark-color, 2);
+    &__label,
+    &__input{
+        display: block;
+    }
+    &__input,
+    &__trigger{
+        padding: $unit-gap;
+
+        font-size: 100%;
+    }
+    &__label {
+        margin-bottom: $unit-gap;
+        text-transform: uppercase;
+    }
+    &__input{
+        margin-top: $unit-gap;
+        border: none;
+    }
 }

@@ -1,0 +1,26 @@
+.button{
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    &--cta{
+        background-color: $main-color;
+        color: $light-color;
+
+        &:hover{
+            background-color: lighten($main-color, 5);
+        }
+    }
+
+    &--secondary{
+        padding: .25em;
+        color: inherit;
+        background-color: rgba($light-color, .2);
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}

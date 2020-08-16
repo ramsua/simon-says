@@ -52,7 +52,6 @@ const setNewPlayer = (newPlayer) => {
         } else {
             // No existe el usuario
             players.push(newPlayer)
-            console.log(exists);
         }
 
         loSt.setItem('players', JSON.stringify(players))

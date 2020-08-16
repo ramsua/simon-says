@@ -1,13 +1,15 @@
-/* eslint-disable no-console */
 // Vars
 import {
-    mainContent, toggleAside, asideContent, userForm
+    toggleAside, asideContent, userForm
 } from './config/vars';
 
 // Global functions
 import {
     toggleClass
 } from './modules/global_functions';
+
+// Local Storage
+import setNewPlayer from './modules/local_storage';
 
 userForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -16,9 +18,12 @@ userForm.addEventListener('submit', (e) => {
     const user = username.value.trim()
 
     if (user !== '') {
-        mainContent.classList.add('is-user-active')
-    } else {
-        console.log('Agrega un usuario');
+        const player = {
+            user,
+            score: {}
+        }
+        setNewPlayer(player);
+        // mainContent.classList.add('is-user-active')
     }
 })
 

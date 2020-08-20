@@ -1,17 +1,6 @@
-// Vars
-import {
-    toggleAside, asideContent, userForm
-} from './config/vars';
+import * as component from './exports/exports';
 
-// Global functions
-import {
-    toggleClass
-} from './modules/global_functions';
-
-// Local Storage
-import setNewPlayer from './modules/local_storage';
-
-userForm.addEventListener('submit', (e) => {
+component.userForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
     const username = document.getElementById('user-name');
@@ -22,17 +11,14 @@ userForm.addEventListener('submit', (e) => {
             user,
             score: {}
         }
-        setNewPlayer(player);
-        // mainContent.classList.add('is-user-active')
+        component.setNewPlayer(player);
+        component.mainContent.classList.add('is-user-active')
+        component.toggleClass('toggle-profile', 'menu__item--active')
+        component.userForm.reset()
     }
 })
 
-toggleAside.addEventListener('click', () => {
-    toggleClass('aside', 'aside--active')
-})
-
-asideContent.addEventListener('click', (e) => {
-    if (e.target.dataset.removecomponent === 'remove-component') {
-        asideContent.removeChild(e.target.parentElement.parentElement)
-    }
+component.toggleProfile.addEventListener('click', () => {
+    component.toggleClass('toggle-profile', 'menu__item--active')
+    component.toggleClass('main-content', 'is-user-active')
 })

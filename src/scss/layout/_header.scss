@@ -1,23 +1,23 @@
-.main-header{
-    position: fixed;
-    top: 0;
-    left: 0;
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    place-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
 
-    width: 100%;
-    height: calc(var(--unit-gap) * 4);
+  width: 100%;
+  height: calc(var(--unit-gap) * 4);
 
-    background-color: darken($dark-color, 2);
+  background-color: darken($dark-color, 2);
 
-    z-index: $z-index-fixed;
+  z-index: $z-index-fixed;
 }
-.main-title{
-    margin: 0;
-    
-    line-height: calc(var(--unit-gap) * 4);
+.main-title {
+  margin: 0;
 
-    font-size: 1em;
+  line-height: calc(var(--unit-gap) * 4);
+
+  font-size: 1em;
 }

@@ -1,27 +1,14 @@
-.scores{
-    position: relative;
+.scores {
+  position: absolute;
+  top: calc(var(--unit-gap) * 6);
 
-    margin-bottom: .5em;
+  width: 50%;
 
+  display: flex;
+  justify-content: space-between;
+
+  &__score {
     background-color: lighten($dark-color, 4);
-
-    &__remove-component{
-        position: absolute;
-        top: 0;
-        right: 0;
-
-        width: 40px;
-        height: 100%;
-
-        font-size: 1.25em;
-        cursor: pointer;
-    }
-
-    &__score{
-        padding: .35em;
-    }
-    
-    &:last-child{
-        margin-bottom: 0;
-    }
+    padding: $unit-gap;
+  }
 }

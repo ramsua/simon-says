@@ -107,17 +107,19 @@ gulp.task('scripts-dev', () => (
         entries: ['./src/js/scripts.js'],
         transform: [babelify]
     })
+        .plugin('tinyify')
         .bundle()
         .pipe(plumber())
         .pipe(source('scripts.min.js'))
         .pipe(gulp.dest('./public/js'))
 ))
 // // Docs folder
-gulp.task('scripts-docs', () => (
+gulp.task('scripts-production', () => (
     browserify({
         entries: ['./src/js/scripts.js'],
         transform: [babelify]
     })
+        .plugin('tinyify')
         .bundle()
         .pipe(source('scripts.min.js'))
         .pipe(gulp.dest('./docs/js'))
@@ -169,7 +171,7 @@ gulp.task('production',
         gulp.parallel([
             'pug-production',
             'scss-production',
-            'scripts-dev',
+            'scripts-production',
             'images-production'])
     ))
 // Docs folder
@@ -178,7 +180,7 @@ gulp.task('docs',
         gulp.parallel([
             'pug-docs',
             'scss-docs',
-            'scripts-docs',
+            'scripts-production',
             'images-docs'])
     ))
 // Development

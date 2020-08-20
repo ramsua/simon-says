@@ -1,26 +1,27 @@
-.button{
-    display: block;
-    width: 100%;
-    text-transform: uppercase;
+.button {
+  display: block;
+  width: 100%;
+  padding: 0.35em;
 
-    cursor: pointer;
+  text-transform: uppercase;
 
-    &--cta{
-        background-color: $main-color;
-        color: $light-color;
+  cursor: pointer;
 
-        &:hover{
-            background-color: lighten($main-color, 5);
-        }
+  &--cta {
+    background-color: $main-color;
+    color: $light-color;
+
+    &:hover {
+      background-color: lighten($main-color, 5);
     }
+  }
 
-    &--secondary{
-        padding: .25em;
-        color: inherit;
-        background-color: rgba($light-color, .2);
+  &--secondary {
+    color: inherit;
+    background-color: rgba($light-color, 0.2);
 
-        &:hover{
-            text-decoration: underline;
-        }
+    &:hover {
+      text-decoration: underline;
     }
+  }
 }

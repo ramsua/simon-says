@@ -5,6 +5,7 @@
  */
 const toggleClass = (target, toggleClass) => {
     const t = document.getElementById(target);
+    if (!t) return
     t.classList.toggle(toggleClass)
 }
 
@@ -29,13 +30,24 @@ const replaceClass = (element, oldClass, newClass) => {
  */
 const removeChilds = (removeTo) => {
     const elem = document.getElementById(removeTo);
-    if (elem) {
-        elem.textContent = ''
-    }
+    if (!elem) return
+    elem.textContent = ''
+}
+
+/**
+ *
+ * @param {string} elemId - Elemento que se le añadirá el texto
+ * @param {string} text - Cadena de texto
+ */
+const writeText = (elemId, text) => {
+    const elem = document.getElementById(elemId);
+    if (!elem) return
+    elem.textContent = text
 }
 
 export {
     toggleClass,
     replaceClass,
-    removeChilds
+    removeChilds,
+    writeText
 }

@@ -1,24 +1,40 @@
+import {
+    mainContent, userForm, toggleProfile, game
+} from './config/vars';
+import { toggleClass } from './modules/global_functions';
 import * as component from './exports/exports';
+import func from './modules/simon_says';
 
-component.userForm.addEventListener('submit', (e) => {
+// Form
+userForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
     const username = document.getElementById('user-name');
-    const user = username.value.trim()
+    const name = username.value.trim()
 
-    if (user !== '') {
+    if (name !== '') {
         const player = {
-            user,
-            score: {}
+            name,
+            score: 0
         }
-        component.setNewPlayer(player);
-        component.mainContent.classList.add('is-user-active')
-        component.toggleClass('toggle-profile', 'menu__item--active')
-        component.userForm.reset()
+        component.setNewPlayer(player)
+        mainContent.classList.add('is-user-active')
+        toggleClass('toggle-profile', 'menu__item--active')
+        userForm.reset()
     }
 })
 
-component.toggleProfile.addEventListener('click', () => {
-    component.toggleClass('toggle-profile', 'menu__item--active')
-    component.toggleClass('main-content', 'is-user-active')
+// Profile
+toggleProfile.addEventListener('click', () => {
+    toggleClass('toggle-profile', 'menu__item--active')
+    toggleClass('main-content', 'is-user-active')
+})
+
+// Game
+game.addEventListener('click', (e) => {
+    if (e.target.id === 'trigger') {
+        func().then((res) => {
+            console.log(res);
+        })
+    }
 })

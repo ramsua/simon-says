@@ -1,3 +1,5 @@
+import { writeText } from './global_functions';
+
 const loSt = localStorage
 
 /**
@@ -13,7 +15,7 @@ const ifUserExists = (username) => {
         let exists = 0
 
         players.forEach((player) => {
-            if (player.user === username) {
+            if (player.name === username) {
                 exists = 1
             }
         })
@@ -38,6 +40,8 @@ const setNewPlayer = (newPlayer) => {
 
         players.push(newPlayer)
 
+        writeText('best-score', newPlayer.score)
+
         loSt.setItem('players', JSON.stringify(players))
 
         console.log('El almacén estaba vacío');
@@ -46,11 +50,16 @@ const setNewPlayer = (newPlayer) => {
 
         const players = JSON.parse(loSt.getItem('players'))
 
-        const exists = ifUserExists(newPlayer.user)
+        const exists = ifUserExists(newPlayer.name)
 
         if (exists) {
             // Existe el usuario
             console.log('Entró en la condicional => exists');
+            players.forEach((player) => {
+                if (player.name === newPlayer.name) {
+                    writeText('best-score', `Best score: ${player.score}`)
+                }
+            })
         } else {
             // No existe el usuario
             players.push(newPlayer)

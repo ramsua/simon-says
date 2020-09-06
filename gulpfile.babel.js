@@ -186,7 +186,8 @@ gulp.task('docs',
 // Development
 gulp.task('dev', () => {
     server({
-        server: './public'
+        server: './public',
+        browser: 'firefox'
     })
     gulp.watch('./src/views/**/*.pug', gulp.series('pug-dev')).on('change', reload)
     gulp.watch('./src/scss/**/*.scss', gulp.series('scss-dev'))

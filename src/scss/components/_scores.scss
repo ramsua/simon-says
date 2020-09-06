@@ -1,14 +1,14 @@
 .scores {
-  position: absolute;
-  top: calc(var(--unit-gap) * 6);
+    position: absolute;
+    top: calc(var(--unit-gap) * 6);
 
-  width: 50%;
+    width: 100%;
 
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-around;
 
-  &__score {
-    background-color: lighten($dark-color, 4);
-    padding: $unit-gap;
-  }
+    &__score {
+        background-color: lighten($dark-color, 4);
+        padding: $unit-gap;
+    }
 }

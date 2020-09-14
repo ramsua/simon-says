@@ -44,8 +44,6 @@ const setNewPlayer = (newPlayer) => {
 
         loSt.setItem('players', JSON.stringify(players))
 
-        console.log('El almacén estaba vacío');
-
     } else {
 
         const players = JSON.parse(loSt.getItem('players'))
@@ -54,7 +52,6 @@ const setNewPlayer = (newPlayer) => {
 
         if (exists) {
             // Existe el usuario
-            console.log('Entró en la condicional => exists');
             players.forEach((player) => {
                 if (player.name === newPlayer.name) {
                     writeText('best-score', `Best score: ${player.score}`)
@@ -63,7 +60,6 @@ const setNewPlayer = (newPlayer) => {
         } else {
             // No existe el usuario
             players.push(newPlayer)
-            console.log('NO entró en la condicional => exists');
         }
 
         loSt.setItem('players', JSON.stringify(players))

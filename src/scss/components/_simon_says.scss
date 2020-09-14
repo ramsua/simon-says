@@ -1,66 +1,61 @@
 .simon-says {
-    position: relative;
+  position: relative;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: $unit-gap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $unit-gap;
 
-    width: $unit-size;
-    height: $unit-size;
+  width: $unit-size;
+  height: $unit-size;
 
-    background-color: darken($dark-color, 5);
+  background-color: darken($dark-color, 5);
 
-    @include border($unit-gap, solid);
-    
+  @include border($unit-gap, solid);
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  &__trigger {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: block;
+    width: calc(var(--unit-size) / 2.5);
+    height: calc(var(--unit-size) / 2.5);
+
+    background-color: $main-color;
+    color: $light-color;
+    font-size: calc(var(--unit-gap) * 3);
+
+    @include border($unit-gap, solid, darken($dark-color, 5));
     border-radius: 50%;
-    overflow: hidden;
+    cursor: pointer;
 
-    &__trigger {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    &:hover {
+      background-color: darken($main-color, 20);
+    }
+  }
 
-        display: block;
-        width: calc(var(--unit-size) / 2.5);
-        height: calc(var(--unit-size) / 2.5);
+  &__color {
+    cursor: pointer;
 
-        background-color: $main-color;
-        color: $light-color;
-        font-size: calc(var(--unit-gap) * 3);
-
-        @include border($unit-gap, solid, darken($dark-color, 5));
-        border-radius: 50%;
-        cursor: pointer;
-
-        &:hover{
-            background-color: darken($main-color, 20);
+    // Colors OFF
+    @each $key, $color in $colors {
+      &--#{$key}-off {
+        background-color: $color;
+        &:hover {
+          background-color: lighten($color, 10);
         }
+      }
     }
 
-    &__color {
-
-        cursor: pointer;
-
-        // Colors OFF
-        @each $key, $color in $colors {
-            &--#{$key}-off {
-                background-color: $color;
-                &:hover{
-                    background-color: lighten($color, 40);
-                }
-            }
-        }
-
-        // Colors ON
-        @each $key, $color in $colors {
-            &--#{$key}-on {
-                background-color: lighten($color, 40);
-                &:hover{
-                    background-color: darken($color, 5);
-                }
-            }
-        }
-
+    // Colors ON
+    @each $key, $color in $colors {
+      &--#{$key}-on {
+        background-color: lighten($color, 40);
+      }
     }
+  }
 }

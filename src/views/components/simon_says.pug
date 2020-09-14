@@ -1,6 +1,9 @@
 section#game.simon-says
-    button#trigger.simon-says__trigger Go!
+    button(
+        id="trigger"
+        class="simon-says__trigger") Go!
     each color in colors
         button(
-            class=`simon-says__color simon-says__color--${color.color}-off`
+            class=`simon-says__color
+                   simon-says__color--${color.color}-off`
             id=`${color.color}`)

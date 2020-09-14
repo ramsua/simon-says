@@ -1,5 +1,9 @@
+import { replaceClass } from './global_functions'
+
 const colors = Array.from(document.querySelectorAll('.simon-says__color'))
-const sequencePc = ['rojo', 'verde', 'gris']
+// const sequencePc = []
+const sequencePc = ['blue', 'green', 'blue', 'red', 'blue', 'red', 'yellow', 'blue', 'yellow']
+let currentPosition = 0
 
 /**
  * Toma un valor al azar del array "colors" y lo asigna al array "sequencePc"
@@ -17,26 +21,27 @@ const setNewColor = () => {
         if (color === lastColor) {
             randomNumber = Math.floor(Math.random() * sequencePc.length)
             color = colors[randomNumber].id
-
-            sequencePc.push(color)
-
-        } else {
-            sequencePc.push(color)
         }
+
+        sequencePc.push(color)
     }
 }
 
-/**
- * Toma la longitud del array de la secuencia de la PC y lo recorre
- */
-const getNextColor = async () => {
-    const turns = sequencePc.length
-    let currentTurn = 0
-    if (currentTurn <= turns) {
-        currentTurn += 1
-        setTimeout(() => currentTurn, 1500);
+const runSequencePc = () => {
+
+    const color = sequencePc[currentPosition]
+    currentPosition += 1
+
+    replaceClass(color, `simon-says__color--${color}-off`, `simon-says__color--${color}-on`)
+
+    if (currentPosition <= sequencePc.length) {
+        setTimeout(() => {
+            replaceClass(color, `simon-says__color--${color}-on`, `simon-says__color--${color}-off`)
+            setTimeout(() => {
+                runSequencePc()
+            }, 250);
+        }, 1000);
     }
-    return null
+
 }
-const func = () => getNextColor()
-export default func
+export { runSequencePc, setNewColor }

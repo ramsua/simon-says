@@ -1,9 +1,9 @@
 import {
     mainContent, userForm, toggleProfile, game
 } from './config/vars';
+import { setNewPlayer } from './exports/exports';
 import { toggleClass } from './modules/global_functions';
-import * as component from './exports/exports';
-import func from './modules/simon_says';
+import { runSequencePc, setNewColor } from './modules/simon_says';
 
 // Form
 userForm.addEventListener('submit', (e) => {
@@ -17,7 +17,7 @@ userForm.addEventListener('submit', (e) => {
             name,
             score: 0
         }
-        component.setNewPlayer(player)
+        setNewPlayer(player)
         mainContent.classList.add('is-user-active')
         toggleClass('toggle-profile', 'menu__item--active')
         userForm.reset()
@@ -33,8 +33,7 @@ toggleProfile.addEventListener('click', () => {
 // Game
 game.addEventListener('click', (e) => {
     if (e.target.id === 'trigger') {
-        func().then((res) => {
-            console.log(res);
-        })
+        // setNewColor()
+        runSequencePc()
     }
 })

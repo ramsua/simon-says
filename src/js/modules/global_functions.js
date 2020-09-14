@@ -45,9 +45,21 @@ const writeText = (elemId, text) => {
     elem.textContent = text
 }
 
+/**
+ *
+ * @param {string} target - Elemento que se quiere desahibilitar
+ * @param {boolean} bool - Por defecto true, false debe asignarse paravolverlo a habilitar
+ */
+const disabledElem = (target, bool = true) => {
+    const elem = document.getElementById(target);
+    if (!elem) return
+    elem.disabled = bool
+}
+
 export {
     toggleClass,
     replaceClass,
     removeChilds,
-    writeText
+    writeText,
+    disabledElem
 }

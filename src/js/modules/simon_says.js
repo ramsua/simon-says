@@ -1,8 +1,8 @@
-import { replaceClass } from './global_functions'
+import { disabledElem, replaceClass } from './global_functions'
 
 const colors = Array.from(document.querySelectorAll('.simon-says__color'))
 // const sequencePc = []
-const sequencePc = ['blue', 'green', 'blue', 'red', 'blue', 'red', 'yellow', 'blue', 'yellow']
+const sequencePc = ['blue', 'green', 'red', 'yellow']
 let currentPosition = 0
 
 /**
@@ -29,19 +29,32 @@ const setNewColor = () => {
 
 const runSequencePc = () => {
 
+    disabledElem('trigger')
+
     const color = sequencePc[currentPosition]
     currentPosition += 1
 
     replaceClass(color, `simon-says__color--${color}-off`, `simon-says__color--${color}-on`)
 
-    if (currentPosition <= sequencePc.length) {
-        setTimeout(() => {
+    const addColor = setTimeout(() => {
+
+        if (currentPosition <= sequencePc.length) {
             replaceClass(color, `simon-says__color--${color}-on`, `simon-says__color--${color}-off`)
-            setTimeout(() => {
+
+            const removeColor = setTimeout(() => {
                 runSequencePc()
-            }, 250);
-        }, 1000);
-    }
+
+                if (currentPosition === sequencePc.length) {
+                    clearTimeout(removeColor)
+                }
+            }, 150);
+
+        } else {
+            clearTimeout(addColor)
+            disabledElem('trigger', false)
+            currentPosition = 0
+        }
+    }, 1000);
 
 }
 export { runSequencePc, setNewColor }

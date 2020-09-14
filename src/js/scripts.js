@@ -35,5 +35,22 @@ game.addEventListener('click', (e) => {
     if (e.target.id === 'trigger') {
         // setNewColor()
         runSequencePc()
+    } else {
+        switch (e.target.id) {
+            case 'green':
+                console.log('Green');
+                break;
+            case 'red':
+                console.log('Red');
+                break;
+            case 'yellow':
+                console.log('Yellow');
+                break;
+            case 'blue':
+                console.log('Blue');
+                break;
+            default:
+                break;
+        }
     }
 })

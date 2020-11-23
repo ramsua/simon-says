@@ -1,9 +1,11 @@
+import '@babel/polyfill';
 import {
     mainContent, userForm, toggleProfile, game
 } from './config/vars';
 import { setNewPlayer } from './exports/exports';
 import { toggleClass } from './modules/global_functions';
-import { runSequencePc, setNewColor } from './modules/simon_says';
+
+const { callAsyncFunction, runSequencePc } = require('./modules/simon_says');
 
 // Form
 userForm.addEventListener('submit', (e) => {
@@ -54,3 +56,5 @@ game.addEventListener('click', (e) => {
         }
     }
 })
+
+callAsyncFunction()
